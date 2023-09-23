@@ -1,0 +1,42 @@
+html, body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden { display: none !important; }
+
+#menu {
+  padding: 5px;
+  border-bottom: 2px solid #000;
+}
+#menu > .lhs { float: left; }
+#menu > .rhs { float: right; }
+
+#error {
+  background-color: #F00;
+  color: #FFF;
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+#error > button.clear {
+  border: 0;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+#note {
+  border: 0;
+  margin: 0;
+  padding: 5px;
+  width: calc(100% - 10px); /* 10px = 2x padding */
+  height: calc(100% - 10px); /* 10px = 2x padding */
+  resize: none;
+  white-space: pre;
+  font-family: monospace;
+}
+#note:focus { outline: none; }

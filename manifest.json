@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "Notes",
+  "version": "0.0.2",
+  "description": "Take notes in the browser",
+  "author": "TheNamlessGuy",
+  "homepage_url": "https://github.com/TheNamlessGuy/browser-notes",
+  "developer": {
+    "name": "TheNamlessGuy",
+    "url": "https://github.com/TheNamlessGuy/browser-notes"
+  },
+
+  "icons": {
+    "16": "res/icon/16.png",
+    "19": "res/icon/19.png",
+    "32": "res/icon/32.png",
+    "38": "res/icon/38.png",
+    "48": "res/icon/48.png",
+    "96": "res/icon/96.png"
+  },
+
+  "permissions": [
+    "tabs",
+    "menus"
+  ],
+
+  "background": {
+    "scripts": [
+      "src/contextmenus.js",
+      "src/background.js"
+    ]
+  },
+
+  "options_ui": {
+    "page": "src/options/page/index.html",
+    "browser_style": true
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "notes@TheNamlessGuy.github.io"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
+    <title>Notes</title>
+  </head>
+  <body>
+    <div id="menu">
+      <span class="lhs">
+        <span>
+          <label>Title:</label>
+          <input id="title" type="text">
+        </span>
+
+        <span>
+          <label>Type:</label>
+          <select id="type">
+            <option value="text">Text</option>
+            <option value="json">JSON</option>
+          </select>
+        </span>
+
+        <span id="json-options" class="optional-options hidden">
+          <button id="json-expand">Expand</button>
+          <button id="json-collapse">Collapse</button>
+        </span>
+      </span>
+
+      <span class="rhs">
+        <button id="export">Export</button>
+      </span>
+    </div>
+    <div id="error" class="hidden">
+      <span class="msg"></span>
+      <button class="clear">X</button>
+    </div>
+    <div id="note" contenteditable="true"></div>
+  </body>
+</html>
