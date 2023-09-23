@@ -1,9 +1,20 @@
 html, body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+body {
+  background-color: #FFF0A7;
+}
+body.pattern {
+  background-size: 15px 15px;
+  background-image: repeating-linear-gradient(0deg, #90CEC8, #90CEC8 1px, #FFF0A7 1px, #FFF0A7);
+  background-position: 0% 10px;
+}
+body.pattern.error {
+  background-position: 0% 18px;
 }
 
 .hidden { display: none !important; }
@@ -11,9 +22,17 @@ html, body {
 #menu {
   padding: 5px;
   border-bottom: 2px solid #000;
+  position: sticky;
+  top: 0;
 }
 #menu > .lhs { float: left; }
 #menu > .rhs { float: right; }
+#menu, #menu input, #menu select, #menu button {
+  background-color: #181008;
+  color: #FFF;
+  border-color: #3E2A14;
+}
+#menu input:focus { outline: none; }
 
 #error {
   background-color: #F00;
@@ -21,6 +40,14 @@ html, body {
   padding: 3px;
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 34px; /* 34px = #menu.height */
+}
+#error > span.msg {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 98%;
 }
 #error > button.clear {
   border: 0;
@@ -35,8 +62,13 @@ html, body {
   padding: 5px;
   width: calc(100% - 10px); /* 10px = 2x padding */
   height: calc(100% - 10px); /* 10px = 2x padding */
+  min-height: calc(100vh - 34px - 10px); /* 34px = #menu.height, 10px = 2x padding */
   resize: none;
   white-space: pre;
+  font-size: 13px;
   font-family: monospace;
 }
 #note:focus { outline: none; }
+body.error #note {
+  min-height: calc(100vh - 34px - 24px - 10px); /* 34px = #menu.height, 24px = #error.height, 10px = 2x padding */
+}

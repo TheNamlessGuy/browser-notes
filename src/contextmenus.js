@@ -21,12 +21,13 @@ const ContextMenus = {
   },
 
   _onShown: async function(info, tab) {
-    await browser.menus.update(ContextMenus._ids.open, {visible: tab.url === 'about:newtab'});
+    await browser.menus.update(ContextMenus._ids.open, {visible: ['about:newtab', 'about:privatebrowsing'].includes(tab.url)});
+    await browser.menus.refresh();
   },
 
   _onClicked: async function(info, tab) {
     if (info.menuItemId === ContextMenus._ids.open) {
-      await browser.tabs.update(tab.id, {url: browser.runtime.getURL('/src/page/index.html')});
+      await browser.tabs.update(tab.id, {url: browser.runtime.getURL(`/src/page/index.html`)});
     }
   },
 };

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="icon" type="image/x-icon" href="/res/icon/32.png">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="index.js"></script>
     <title>Notes</title>
   </head>
-  <body>
+  <body class="pattern">
     <div id="menu">
       <span class="lhs">
         <span>
@@ -28,6 +29,8 @@
       </span>
 
       <span class="rhs">
+        <button id="toggle-bg-pattern">Toggle background pattern</button>
+        <button id="toggle-spellcheck">Toggle spell check</button>
         <button id="export">Export</button>
       </span>
     </div>
@@ -35,6 +38,6 @@
       <span class="msg"></span>
       <button class="clear">X</button>
     </div>
-    <div id="note" contenteditable="true"></div>
+    <div id="note" contenteditable="true" spellcheck="true"></div>
   </body>
 </html>
