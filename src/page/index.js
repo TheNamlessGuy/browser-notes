@@ -142,7 +142,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('toggle-spellcheck').addEventListener('click', () => Note.element.setAttribute('spellcheck', Note.element.getAttribute('spellcheck') === 'true' ? 'false' : 'true'));
 
   document.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 's' && e.shiftKey) {
+    if (e.key.toLowerCase() === 's' && e.ctrlKey) {
       exportFile();
       e.stopPropagation();
       e.preventDefault();
