@@ -30,7 +30,6 @@ const Error = {
   init: function() { document.getElementById('error').getElementsByClassName('clear')[0].addEventListener('click', () => Error.clear()); },
   clear: function() {
     document.getElementById('error').classList.add('hidden');
-    document.body.classList.remove('error');
   },
 
   set: function(msg) {
@@ -38,7 +37,6 @@ const Error = {
     element.getElementsByClassName('msg')[0].innerText = msg;
     element.title = msg;
     element.classList.remove('hidden');
-    document.body.classList.add('error');
   },
 };
 
@@ -138,7 +136,6 @@ window.addEventListener('DOMContentLoaded', () => {
   Title.init();
 
   document.getElementById('export').addEventListener('click', exportFile);
-  document.getElementById('toggle-bg-pattern').addEventListener('click', () => document.body.classList.toggle('pattern'));
   document.getElementById('toggle-spellcheck').addEventListener('click', () => Note.element.setAttribute('spellcheck', Note.element.getAttribute('spellcheck') === 'true' ? 'false' : 'true'));
 
   document.addEventListener('keydown', (e) => {

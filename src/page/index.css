@@ -4,28 +4,20 @@ html, body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-body {
   background-color: #FFF0A7;
-}
-body.pattern {
-  background-size: 15px 15px;
-  background-image: repeating-linear-gradient(0deg, #90CEC8, #90CEC8 1px, #FFF0A7 1px, #FFF0A7);
-  background-position: 0% 10px;
-}
-body.pattern.error {
-  background-position: 0% 18px;
 }
 
 .hidden { display: none !important; }
 
-#menu {
-  padding: 5px;
-  border-bottom: 2px solid #000;
+#header {
   position: sticky;
   top: 0;
 }
-#menu > .lhs { float: left; }
+
+#menu {
+  padding: 5px;
+  border-bottom: 2px solid #000;
+}
 #menu > .rhs { float: right; }
 #menu, #menu input, #menu select, #menu button {
   background-color: #181008;
@@ -40,8 +32,6 @@ body.pattern.error {
   padding: 3px;
   display: flex;
   justify-content: space-between;
-  position: sticky;
-  top: 34px; /* 34px = #menu.height */
 }
 #error > span.msg {
   white-space: nowrap;
@@ -69,6 +59,3 @@ body.pattern.error {
   font-family: monospace;
 }
 #note:focus { outline: none; }
-body.error #note {
-  min-height: calc(100vh - 34px - 24px - 10px); /* 34px = #menu.height, 24px = #error.height, 10px = 2x padding */
-}
